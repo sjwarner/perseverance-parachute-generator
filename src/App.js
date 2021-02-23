@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FeatherIcon from "feather-icons-react";
 
+import InputPane from "./InputPane";
 import PerseveranceParachute from "./perseverance-parachute";
 import {
   encodeTextToPosition,
@@ -65,86 +66,16 @@ const App = () => {
           />
         </div>
         <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-4 p-4">
-          <div className="flex flex-col justify-around">
-            <label htmlFor="first-word">First word</label>
-            <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-              type="text"
-              id="first-word"
-              value={firstWord}
-              placeholder="DARE"
-              maxLength={8}
-              onChange={(e) => setFirstWord(e.target.value)}
-            />
-            <label htmlFor="second-word">Second word</label>
-            <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-              type="text"
-              id="second-word"
-              value={secondWord}
-              placeholder="MIGHTY"
-              maxLength={8}
-              onChange={(e) => setSecondWord(e.target.value)}
-            />
-            <label htmlFor="third-word">Third word</label>
-            <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-              type="text"
-              id="third-word"
-              value={thirdWord}
-              placeholder="THINGS"
-              maxLength={8}
-              onChange={(e) => setThirdWord(e.target.value)}
-            />
-            <label htmlFor="location-coordinates">
-              A location -{" "}
-              <a
-                className="text-blue-300"
-                href="https://gisgeography.com/decimal-degrees-dd-minutes-seconds-dms/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                DMS Coordinates
-              </a>
-            </label>
-            <input
-              className={`bg-white focus:outline-none focus:shadow-outline ${
-                isCoordinatesValid(locationCoordinates)
-                  ? "border border-gray-300"
-                  : "border-red-500 border-2"
-              } rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
-              type="text"
-              id="location-coordinates"
-              value={locationCoordinates}
-              placeholder="34 11 58 N 118 10 31 W"
-              onChange={(e) => setLocationCoordinates(e.target.value)}
-            />
-            <button
-              className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-              onClick={() =>
-                saveSvgAsPng.saveSvgAsPng(
-                  document.getElementById("parachute"),
-                  "parachute.png"
-                )
-              }
-            >
-              Save your parachute
-            </button>
-            <span className="mt-4 mb-4">
-              Download your parachute and tweet it out #msg2mars
-            </span>
-            <a
-              className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-              href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsjwarner.github.io%2Fperseverance-parachute-generator%2F&via=Msg2Mars&text=Make%20your%20own%20Perseverance%20Parachute%20secret%20message%21&hashtags=msg2mars"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>
-                <FeatherIcon icon="twitter" className="inline-block mr-4" />
-                Tweet
-              </span>
-            </a>
-          </div>
+          <InputPane
+            firstWord={firstWord}
+            setFirstWord={setFirstWord}
+            secondWord={secondWord}
+            setSecondWord={setSecondWord}
+            thirdWord={thirdWord}
+            setThirdWord={setThirdWord}
+            locationCoordinates={locationCoordinates}
+            setLocationCoordinates={setLocationCoordinates}
+          />
         </div>
       </div>
       <footer className="py-5 bg-black text-center text-white flex flex-row justify-between">
