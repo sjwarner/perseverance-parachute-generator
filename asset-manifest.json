@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/perseverance-parachute-generator/static/css/main.748fcb6f.chunk.css",
-    "main.js": "/perseverance-parachute-generator/static/js/main.edc80a8e.chunk.js",
-    "main.js.map": "/perseverance-parachute-generator/static/js/main.edc80a8e.chunk.js.map",
+    "main.js": "/perseverance-parachute-generator/static/js/main.1f80f3f5.chunk.js",
+    "main.js.map": "/perseverance-parachute-generator/static/js/main.1f80f3f5.chunk.js.map",
     "runtime-main.js": "/perseverance-parachute-generator/static/js/runtime-main.7aa6c930.js",
     "runtime-main.js.map": "/perseverance-parachute-generator/static/js/runtime-main.7aa6c930.js.map",
     "static/js/2.90248c09.chunk.js": "/perseverance-parachute-generator/static/js/2.90248c09.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7aa6c930.js",
     "static/js/2.90248c09.chunk.js",
     "static/css/main.748fcb6f.chunk.css",
-    "static/js/main.edc80a8e.chunk.js"
+    "static/js/main.1f80f3f5.chunk.js"
   ]
 }
