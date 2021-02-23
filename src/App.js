@@ -78,7 +78,7 @@ const App = () => {
             encodedOuterRing={encodedLocationCoordinates}
           />
         </div>
-        <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-4 p-4">
+        <div className="flex flex-col Input-pane md:w-1/4 w-full px-4">
           <InputPane
             firstWord={firstWord}
             setFirstWord={setFirstWord}
@@ -111,14 +111,18 @@ const App = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FeatherIcon icon="github" className="mr-4" />
+            <FeatherIcon
+              icon="github"
+              className="mr-4"
+              alt="Msg2Mars GitHub repository"
+            />
           </a>
           <a
             href="https://twitter.com/msg2mars"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FeatherIcon icon="twitter" />
+            <FeatherIcon icon="twitter" alt="Msg2Mars Twitter account" />
           </a>
         </div>
       </footer>

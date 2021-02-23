@@ -88,7 +88,7 @@ const InputPane = (props) => {
         </span>
       </a>
       <button
-        className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+        className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded md:mb-0 mb-4"
         onClick={() => {
           navigator.clipboard.writeText(
             `${window.location.href.split("?")[0]}?first=${encodeURI(

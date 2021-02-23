@@ -7,9 +7,6 @@ input {
   color: black;
 }
 
-.Parachute {
-}
-
 .Parachute-pane {
   align-items: center;
 }
@@ -17,12 +14,4 @@ input {
 .Input-pane {
   align-items: center;
   justify-content: center;
-}
-
-@media (min-width: 768px) {
-  .Parachute-pane {
-  }
-
-  .Input-pane {
-  }
 }
