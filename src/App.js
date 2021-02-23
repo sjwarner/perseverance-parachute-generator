@@ -14,11 +14,25 @@ import {
 import "./App.css";
 
 const App = () => {
-  const [firstWord, setFirstWord] = useState(queryString.parse(window.location.search).first ? queryString.parse(window.location.search).first : "DARE");
-  const [secondWord, setSecondWord] = useState(queryString.parse(window.location.search).second ? queryString.parse(window.location.search).second : "MIGHTY");
-  const [thirdWord, setThirdWord] = useState(queryString.parse(window.location.search).third ? queryString.parse(window.location.search).third : "THINGS");
-  const [locationCoordinates, setLocationCoordinates] = useState(queryString.parse(window.location.search).coords ? queryString.parse(window.location.search).coords : 
-    "34 11 58 N 118 10 31 W"
+  const [firstWord, setFirstWord] = useState(
+    queryString.parse(window.location.search).first
+      ? queryString.parse(window.location.search).first
+      : "DARE"
+  );
+  const [secondWord, setSecondWord] = useState(
+    queryString.parse(window.location.search).second
+      ? queryString.parse(window.location.search).second
+      : "MIGHTY"
+  );
+  const [thirdWord, setThirdWord] = useState(
+    queryString.parse(window.location.search).third
+      ? queryString.parse(window.location.search).third
+      : "THINGS"
+  );
+  const [locationCoordinates, setLocationCoordinates] = useState(
+    queryString.parse(window.location.search).coords
+      ? queryString.parse(window.location.search).coords
+      : "34 11 58 N 118 10 31 W"
   );
 
   const [encodedFirstWord, setEncodedFirstWord] = useState(EMPTY_ARRAY);

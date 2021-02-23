@@ -73,7 +73,8 @@ const InputPane = (props) => {
         Save your parachute
       </button>
       <span className="mt-4 mb-4">
-        Download your parachute and tweet out your own #msg2mars, or share your link with friends!
+        Download your parachute and tweet out your own #msg2mars, or share your
+        link with friends!
       </span>
       <a
         className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded mb-4"
@@ -88,7 +89,15 @@ const InputPane = (props) => {
       </a>
       <button
         className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-        onClick={() => {navigator.clipboard.writeText(`${window.location.href.split('?')[0]}?first=${encodeURI(props.firstWord)}&second=${encodeURI(props.secondWord)}&third=${encodeURI(props.thirdWord)}&coords=${encodeURI(props.locationCoordinates)}`)}}
+        onClick={() => {
+          navigator.clipboard.writeText(
+            `${window.location.href.split("?")[0]}?first=${encodeURI(
+              props.firstWord
+            )}&second=${encodeURI(props.secondWord)}&third=${encodeURI(
+              props.thirdWord
+            )}&coords=${encodeURI(props.locationCoordinates)}`
+          );
+        }}
       >
         Copy link to clipboard
       </button>
