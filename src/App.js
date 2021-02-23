@@ -2,13 +2,37 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import PerseveranceParachute from "./perseverance-parachute";
 
-function encodeToPosition(text) {
+function encodeTextToPosition(text) {
     const encodedArray = [...text].map(a => parseInt(a, 36) - 9).filter(a => a >= 0);
     const paddingArray = Array(8 - encodedArray.length).fill(0);
 
     const array = encodedArray.concat(paddingArray);
 
     return array.map(num => (num >>> 0).toString(2).padStart(8, "0"))
+}
+
+function encodeCoordinatesToPosition(outerRing) {
+    const coordinates = outerRing.split(' ');
+
+    const nOrS = [coordinates[3]].map(a => parseInt(a, 36) - 9).filter(a => a >= 0);
+    const eOrW = [coordinates[7]].map(a => parseInt(a, 36) - 9).filter(a => a >= 0);
+
+    const array = [coordinates[0], coordinates[1], coordinates[2], nOrS, coordinates[4], coordinates[5], coordinates[6],  eOrW];
+
+    return array.map(num => (num >>> 0).toString(2).padStart(8, "0"))
+}
+
+function isCoordinatesValid(outerRing) {
+    const coordinates = outerRing.split(' ');
+
+    return 0 <= coordinates[0] && coordinates[0] <= 180
+        && 0 <= coordinates[1] &&  coordinates[1] <= 180
+        && 0 <= coordinates[2] &&  coordinates[2] <= 180
+        && (coordinates[3]  === "N" ||  coordinates[3] === "S")
+        && 0 <= coordinates[4] && coordinates[4] <= 180
+        && 0 <= coordinates[5] &&  coordinates[5] <= 180
+        && 0 <= coordinates[6] &&  coordinates[6] <= 180
+        && (coordinates[7] === "W" ||  coordinates[7] === "E");
 }
 
 const EMPTY_ARRAY = ["00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000"]
@@ -25,19 +49,23 @@ const App = () => {
   const [encodedOuterRing, setEncodedOuterRing] = useState(EMPTY_ARRAY);
 
   useEffect(() => {
-    setEncodedInnerRing(encodeToPosition(innerRing))
+    setEncodedInnerRing(encodeTextToPosition(innerRing))
   }, [innerRing])
 
   useEffect(() => {
-    setEncodedSecondRing(encodeToPosition(secondRing))
+    setEncodedSecondRing(encodeTextToPosition(secondRing))
   }, [secondRing])
 
   useEffect(() => {
-    setEncodedThirdRing(encodeToPosition(thirdRing))
+    setEncodedThirdRing(encodeTextToPosition(thirdRing))
   }, [thirdRing])
 
   useEffect(() => {
-    setEncodedOuterRing(encodeToPosition(outerRing))
+    if (isCoordinatesValid(outerRing)) {
+        setEncodedOuterRing(encodeCoordinatesToPosition(outerRing))
+    } else {
+        setEncodedOuterRing(EMPTY_ARRAY);
+    }
   }, [outerRing])
 
   return (
@@ -67,14 +95,15 @@ const App = () => {
       <div className="flex flex-col Input-pane">
           <div className="tw-input-field">
             <label htmlFor="outer-ring">Outer Ring</label>
-            <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-              type="text"
-              id="outer-ring"
-              placeholder="N 118 10 31 W 34 11 58"
-              maxLength={8}
-              onChange={e => setOuterRing(e.target.value)}
-            />
+              <div className="flex flex-row justify-between">
+                  <input
+                      className={`bg-white focus:outline-none focus:shadow-outline border ${isCoordinatesValid(outerRing) ? "border-gray-300": "border-red-300"} rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
+                      type="text"
+                      id="outer-ring"
+                      placeholder="34 11 58 N 118 10 31 W"
+                      onChange={e => setOuterRing(e.target.value)}
+                  />
+              </div>
             <label htmlFor="outer-ring">2nd Ring</label>
             <input
               className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
