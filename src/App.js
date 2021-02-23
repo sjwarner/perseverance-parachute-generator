@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FeatherIcon from "feather-icons-react";
+import queryString from "query-string";
 
 import InputPane from "./InputPane";
 import PerseveranceParachute from "./PerseveranceParachute";
@@ -13,10 +14,10 @@ import {
 import "./App.css";
 
 const App = () => {
-  const [firstWord, setFirstWord] = useState("DARE");
-  const [secondWord, setSecondWord] = useState("MIGHTY");
-  const [thirdWord, setThirdWord] = useState("THINGS");
-  const [locationCoordinates, setLocationCoordinates] = useState(
+  const [firstWord, setFirstWord] = useState(queryString.parse(window.location.search).first ? queryString.parse(window.location.search).first : "DARE");
+  const [secondWord, setSecondWord] = useState(queryString.parse(window.location.search).second ? queryString.parse(window.location.search).second : "MIGHTY");
+  const [thirdWord, setThirdWord] = useState(queryString.parse(window.location.search).third ? queryString.parse(window.location.search).third : "THINGS");
+  const [locationCoordinates, setLocationCoordinates] = useState(queryString.parse(window.location.search).coords ? queryString.parse(window.location.search).coords : 
     "34 11 58 N 118 10 31 W"
   );
 

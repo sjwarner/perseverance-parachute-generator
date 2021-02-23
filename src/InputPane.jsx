@@ -73,10 +73,10 @@ const InputPane = (props) => {
         Save your parachute
       </button>
       <span className="mt-4 mb-4">
-        Download your parachute and tweet out your own #msg2mars
+        Download your parachute and tweet out your own #msg2mars, or share your link with friends!
       </span>
       <a
-        className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+        className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded mb-4"
         href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsjwarner.github.io%2Fperseverance-parachute-generator%2F&via=Msg2Mars&text=Make%20your%20own%20Perseverance%20Parachute%20secret%20message%21&hashtags=msg2mars"
         target="_blank"
         rel="noopener noreferrer"
@@ -86,6 +86,12 @@ const InputPane = (props) => {
           Tweet
         </span>
       </a>
+      <button
+        className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+        onClick={() => {navigator.clipboard.writeText(`${window.location.href.split('?')[0]}?first=${encodeURI(props.firstWord)}&second=${encodeURI(props.secondWord)}&third=${encodeURI(props.thirdWord)}&coords=${encodeURI(props.locationCoordinates)}`)}}
+      >
+        Copy link to clipboard
+      </button>
     </div>
   );
 };
