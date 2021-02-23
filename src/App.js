@@ -72,10 +72,12 @@ const EMPTY_ARRAY = [
 ];
 
 const App = () => {
-  const [firstWord, setFirstWord] = useState("");
-  const [secondWord, setThirdWord] = useState("");
-  const [thirdWord, setSecondWord] = useState("");
-  const [locationCoordinates, setLocationCoordinates] = useState("");
+  const [firstWord, setFirstWord] = useState("DARE");
+  const [secondWord, setThirdWord] = useState("MIGHTY");
+  const [thirdWord, setSecondWord] = useState("THINGS");
+  const [locationCoordinates, setLocationCoordinates] = useState(
+    "34 11 58 N 118 10 31 W"
+  );
 
   const [encodedFirstWord, setEncodedFirstWord] = useState(EMPTY_ARRAY);
   const [encodedSecondWord, setEncodedSecondWord] = useState(EMPTY_ARRAY);
@@ -107,92 +109,98 @@ const App = () => {
   }, [locationCoordinates]);
 
   return (
-    <div className="App flex md:flex-row flex-col h-screen">
-      <div className="flex flex-col Parachute-pane md:w-3/4 w-full mt-16">
-        <PerseveranceParachute
-          encodedInnerRing={encodedFirstWord}
-          encodedSecondRing={encodedSecondWord}
-          encodedThirdRing={encodedThirdWord}
-          encodedOuterRing={encodedLocationCoordinates}
-        />
-        <p className="mt-4 mb-4">Encode your own parachute!</p>
-        <p className="mt-4 mb-4">
-          Inspired by the&nbsp;
-          <a
-            className="text-blue-300"
-            href="https://twitter.com/steltzner/status/1364076615932645379"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Perseverance Parachute code crackers
-          </a>
-        </p>
-      </div>
-      <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-8 p-4">
-        <div className="flex flex-col justify-around">
-          <label htmlFor="first-word">First word</label>
-          <input
-            className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-            type="text"
-            id="first-word"
-            placeholder="DARE"
-            maxLength={8}
-            onChange={(e) => setFirstWord(e.target.value)}
+    <>
+      <div className="App flex md:flex-row flex-col h-screen">
+        <div className="flex flex-col Parachute-pane md:w-3/4 w-full mt-16">
+          <PerseveranceParachute
+            encodedInnerRing={encodedFirstWord}
+            encodedSecondRing={encodedSecondWord}
+            encodedThirdRing={encodedThirdWord}
+            encodedOuterRing={encodedLocationCoordinates}
           />
-          <label htmlFor="second-word">Second word</label>
-          <input
-            className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-            type="text"
-            id="second-word"
-            placeholder="MIGHTY"
-            maxLength={8}
-            onChange={(e) => setSecondWord(e.target.value)}
-          />
-          <label htmlFor="third-word">Third word</label>
-          <input
-            className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-            type="text"
-            id="third-word"
-            placeholder="THINGS"
-            maxLength={8}
-            onChange={(e) => setThirdWord(e.target.value)}
-          />
-          <label htmlFor="location-coordinates">
-            A location -{" "}
+          <p className="mt-4 mb-4">Encode your own parachute!</p>
+          <p className="mt-4 mb-4">
+            Inspired by the&nbsp;
             <a
               className="text-blue-300"
-              href="https://gisgeography.com/decimal-degrees-dd-minutes-seconds-dms/"
+              href="https://twitter.com/steltzner/status/1364076615932645379"
               target="_blank"
               rel="noopener noreferrer"
             >
-              DMS Coordinates
+              Perseverance Parachute code crackers
             </a>
-          </label>
-          <input
-            className={`bg-white focus:outline-none focus:shadow-outline ${
-              isCoordinatesValid(locationCoordinates)
-                ? "border border-gray-300"
-                : "border-red-500 border-2"
-            } rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
-            type="text"
-            id="location-coordinates"
-            placeholder="34 11 58 N 118 10 31 W"
-            onChange={(e) => setLocationCoordinates(e.target.value)}
-          />
-          <button
-            className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-            onClick={() =>
-              saveSvgAsPng.saveSvgAsPng(
-                document.getElementById("parachute"),
-                "parachute.png"
-              )
-            }
-          >
-            Save your parachute
-          </button>
+          </p>
+        </div>
+        <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-8 p-4">
+          <div className="flex flex-col justify-around">
+            <label htmlFor="first-word">First word</label>
+            <input
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+              type="text"
+              id="first-word"
+              value={firstWord}
+              placeholder="DARE"
+              maxLength={8}
+              onChange={(e) => setFirstWord(e.target.value)}
+            />
+            <label htmlFor="second-word">Second word</label>
+            <input
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+              type="text"
+              id="second-word"
+              value={secondWord}
+              placeholder="MIGHTY"
+              maxLength={8}
+              onChange={(e) => setSecondWord(e.target.value)}
+            />
+            <label htmlFor="third-word">Third word</label>
+            <input
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+              type="text"
+              id="third-word"
+              value={thirdWord}
+              placeholder="THINGS"
+              maxLength={8}
+              onChange={(e) => setThirdWord(e.target.value)}
+            />
+            <label htmlFor="location-coordinates">
+              A location -{" "}
+              <a
+                className="text-blue-300"
+                href="https://gisgeography.com/decimal-degrees-dd-minutes-seconds-dms/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                DMS Coordinates
+              </a>
+            </label>
+            <input
+              className={`bg-white focus:outline-none focus:shadow-outline ${
+                isCoordinatesValid(locationCoordinates)
+                  ? "border border-gray-300"
+                  : "border-red-500 border-2"
+              } rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
+              type="text"
+              id="location-coordinates"
+              value={locationCoordinates}
+              placeholder="34 11 58 N 118 10 31 W"
+              onChange={(e) => setLocationCoordinates(e.target.value)}
+            />
+            <button
+              className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+              onClick={() =>
+                saveSvgAsPng.saveSvgAsPng(
+                  document.getElementById("parachute"),
+                  "parachute.png"
+                )
+              }
+            >
+              Save your parachute
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
