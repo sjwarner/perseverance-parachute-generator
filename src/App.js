@@ -116,17 +116,6 @@ const App = () => {
           encodedOuterRing={encodedLocationCoordinates}
         />
         <p className="mt-4 mb-4">Encode your own parachute!</p>
-        <button
-          className="bg-blue-900 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-          onClick={() =>
-            saveSvgAsPng.saveSvgAsPng(
-              document.getElementById("parachute"),
-              "parachute.png"
-            )
-          }
-        >
-          Save your parachute
-        </button>
         <p className="mt-4 mb-4">
           Inspired by the&nbsp;
           <a
@@ -140,7 +129,7 @@ const App = () => {
         </p>
       </div>
       <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-8 p-4">
-        <div className="tw-input-field">
+        <div className="flex flex-col justify-around">
           <label htmlFor="first-word">First word</label>
           <input
             className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
@@ -169,21 +158,38 @@ const App = () => {
             onChange={(e) => setThirdWord(e.target.value)}
           />
           <label htmlFor="location-coordinates">
-            A location - DMS Coordinates
+            A location -{" "}
+            <a
+              className="text-blue-300"
+              href="https://gisgeography.com/decimal-degrees-dd-minutes-seconds-dms/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              DMS Coordinates
+            </a>
           </label>
-          <div className="flex flex-row justify-between">
-            <input
-              className={`bg-white focus:outline-none focus:shadow-outline ${
-                isCoordinatesValid(locationCoordinates)
-                  ? "border border-gray-300"
-                  : "border-red-700 border-2"
-              } rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
-              type="text"
-              id="location-coordinates"
-              placeholder="34 11 58 N 118 10 31 W"
-              onChange={(e) => setLocationCoordinates(e.target.value)}
-            />
-          </div>
+          <input
+            className={`bg-white focus:outline-none focus:shadow-outline ${
+              isCoordinatesValid(locationCoordinates)
+                ? "border border-gray-300"
+                : "border-red-500 border-2"
+            } rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
+            type="text"
+            id="location-coordinates"
+            placeholder="34 11 58 N 118 10 31 W"
+            onChange={(e) => setLocationCoordinates(e.target.value)}
+          />
+          <button
+            className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+            onClick={() =>
+              saveSvgAsPng.saveSvgAsPng(
+                document.getElementById("parachute"),
+                "parachute.png"
+              )
+            }
+          >
+            Save your parachute
+          </button>
         </div>
       </div>
     </div>
