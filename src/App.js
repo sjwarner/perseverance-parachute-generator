@@ -173,10 +173,10 @@ const App = () => {
           </label>
           <div className="flex flex-row justify-between">
             <input
-              className={`bg-white focus:outline-none focus:shadow-outline border ${
+              className={`bg-white focus:outline-none focus:shadow-outline ${
                 isCoordinatesValid(locationCoordinates)
-                  ? "border-gray-300"
-                  : "border-red-300"
+                  ? "border border-gray-300"
+                  : "border-red-700 border-2"
               } rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
               type="text"
               id="location-coordinates"
