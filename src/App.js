@@ -119,8 +119,8 @@ const App = () => {
         <div className="flex flex-col Parachute-pane md:w-3/4 w-full p5 mt-4 mb-4 max-h-full">
           <PerseveranceParachute
             encodedInnerRing={encodedFirstWord}
-            encodedSecondRing={encodedSecondWord}
-            encodedThirdRing={encodedThirdWord}
+            encodedSecondRing={encodedThirdWord}
+            encodedThirdRing={encodedSecondWord}
             encodedOuterRing={encodedLocationCoordinates}
           />
         </div>
