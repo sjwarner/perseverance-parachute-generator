@@ -40,44 +40,44 @@ function isCoordinatesValid(outerRing) {
 const EMPTY_ARRAY = ["00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000", "00000000"]
 
 const App = () => {
-  const [innerRing, setInnerRing] = useState("");
-  const [secondRing, setSecondRing] = useState("");
-  const [thirdRing, setThirdRing] = useState("");
-  const [outerRing, setOuterRing] = useState("");
+  const [firstWord, setFirstWord] = useState("");
+  const [secondWord, setThirdWord] = useState("");
+  const [thirdWord, setSecondWord] = useState("");
+  const [locationCoordinates, setLocationCoordinates] = useState("");
 
-  const [encodedInnerRing, setEncodedInnerRing] = useState(EMPTY_ARRAY);
-  const [encodedSecondRing, setEncodedSecondRing] = useState(EMPTY_ARRAY);
-  const [encodedThirdRing, setEncodedThirdRing] = useState(EMPTY_ARRAY);
-  const [encodedOuterRing, setEncodedOuterRing] = useState(EMPTY_ARRAY);
-
-  useEffect(() => {
-    setEncodedInnerRing(encodeTextToPosition(innerRing))
-  }, [innerRing])
+  const [encodedFirstWord, setEncodedFirstWord] = useState(EMPTY_ARRAY);
+  const [encodedSecondWord, setEncodedSecondWord] = useState(EMPTY_ARRAY);
+  const [encodedThirdWord, setEncodedThirdWord] = useState(EMPTY_ARRAY);
+  const [encodedLocationCoordinates, setEncodedLocationCoordinates] = useState(EMPTY_ARRAY);
 
   useEffect(() => {
-    setEncodedSecondRing(encodeTextToPosition(secondRing))
-  }, [secondRing])
+    setEncodedFirstWord(encodeTextToPosition(firstWord))
+  }, [firstWord])
 
   useEffect(() => {
-    setEncodedThirdRing(encodeTextToPosition(thirdRing))
-  }, [thirdRing])
+    setEncodedSecondWord(encodeTextToPosition(secondWord))
+  }, [secondWord])
 
   useEffect(() => {
-    if (isCoordinatesValid(outerRing)) {
-        setEncodedOuterRing(encodeCoordinatesToPosition(outerRing))
+    setEncodedThirdWord(encodeTextToPosition(thirdWord))
+  }, [thirdWord])
+
+  useEffect(() => {
+    if (isCoordinatesValid(locationCoordinates)) {
+        setEncodedLocationCoordinates(encodeCoordinatesToPosition(locationCoordinates))
     } else {
-        setEncodedOuterRing(EMPTY_ARRAY);
+        setEncodedLocationCoordinates(EMPTY_ARRAY);
     }
-  }, [outerRing])
+  }, [locationCoordinates])
 
   return (
     <div className="App flex md:flex-row flex-col h-screen">
       <div className="flex flex-col Parachute-pane md:w-3/4 w-full mt-16">
         <PerseveranceParachute
-          encodedInnerRing={encodedInnerRing}
-          encodedSecondRing={encodedSecondRing}
-          encodedThirdRing={encodedThirdRing}
-          encodedOuterRing={encodedOuterRing}
+          encodedInnerRing={encodedFirstWord}
+          encodedSecondRing={encodedSecondWord}
+          encodedThirdRing={encodedThirdWord}
+          encodedOuterRing={encodedLocationCoordinates}
         />
           <p className="mt-4 mb-4">
             Encode your own parachute!
@@ -101,43 +101,43 @@ const App = () => {
       </div>
       <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-8 p-4">
           <div className="tw-input-field">
-            <label htmlFor="outer-ring">Outer Ring</label>
-              <div className="flex flex-row justify-between">
-                  <input
-                      className={`bg-white focus:outline-none focus:shadow-outline border ${isCoordinatesValid(outerRing) ? "border-gray-300": "border-red-300"} rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
-                      type="text"
-                      id="outer-ring"
-                      placeholder="34 11 58 N 118 10 31 W"
-                      onChange={e => setOuterRing(e.target.value)}
-                  />
-              </div>
-            <label htmlFor="outer-ring">2nd Ring</label>
+            <label htmlFor="first-word">First word</label>
             <input
               className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
               type="text"
-              id="2nd-ring"
-              placeholder="THINGS"
-              maxLength={8}
-              onChange={e => setSecondRing(e.target.value)}
-            />
-            <label htmlFor="outer-ring">3rd Ring</label>
-            <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-              type="text"
-              id="3rd-ring"
-              placeholder="MIGHTY"
-              maxLength={8}
-              onChange={e => setThirdRing(e.target.value)}
-            />
-            <label htmlFor="outer-ring">Inner Ring</label>
-            <input
-              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
-              type="text"
-              id="inner-ring"
+              id="first-word"
               placeholder="DARE"
               maxLength={8}
-              onChange={e => setInnerRing(e.target.value)}
+              onChange={e => setFirstWord(e.target.value)}
             />
+            <label htmlFor="second-word">Second word</label>
+            <input
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+              type="text"
+              id="second-word"
+              placeholder="MIGHTY"
+              maxLength={8}
+              onChange={e => setSecondWord(e.target.value)}
+            />
+            <label htmlFor="third-word">Third word</label>
+            <input
+              className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+              type="text"
+              id="third-word"
+              placeholder="THINGS"
+              maxLength={8}
+              onChange={e => setThirdWord(e.target.value)}
+            />
+            <label htmlFor="location-coordinates">A location - DMS Coordinates</label>
+              <div className="flex flex-row justify-between">
+                  <input
+                      className={`bg-white focus:outline-none focus:shadow-outline border ${isCoordinatesValid(locationCoordinates) ? "border-gray-300": "border-red-300"} rounded py-2 px-4 block w-full appearance-none leading-normal mb-4`}
+                      type="text"
+                      id="location-coordinates"
+                      placeholder="34 11 58 N 118 10 31 W"
+                      onChange={e => setLocationCoordinates(e.target.value)}
+                  />
+              </div>
           </div>
       </div>
     </div>
