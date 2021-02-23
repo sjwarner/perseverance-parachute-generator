@@ -23,7 +23,7 @@ const PerseveranceParachute = (props) => {
   }, [props.encodedOuterRing])
 
   return (
-      <svg height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <svg width="70%" height="80%" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
     {/* Outermost ring */}
     <path d="M300.00,0.0000A300,300,0,0,1,322.60,0.85233L320.34,30.767A270,270,0,0,0,300.00,30.000Z" style={{fill: `${outerRing[7].charAt(7) === "1" ? '#DF6A33' : '#FFFFFF'}`, stroke:'#000000'}}/>
 

@@ -69,8 +69,8 @@ const App = () => {
   }, [outerRing])
 
   return (
-    <div className="App flex flex-row">
-      <div className="flex flex-col Parachute-pane">
+    <div className="App flex md:flex-row flex-col h-screen">
+      <div className="flex flex-col Parachute-pane md:w-3/4 w-full mt-16">
         <PerseveranceParachute
           encodedInnerRing={encodedInnerRing}
           encodedSecondRing={encodedSecondRing}
@@ -92,7 +92,7 @@ const App = () => {
               </a>
           </p>
       </div>
-      <div className="flex flex-col Input-pane">
+      <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-8 p-4">
           <div className="tw-input-field">
             <label htmlFor="outer-ring">Outer Ring</label>
               <div className="flex flex-row justify-between">

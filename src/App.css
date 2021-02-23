@@ -2,15 +2,20 @@
 }
 
 .Parachute-pane {
-  min-height: 100vh;
   align-items: center;
-  justify-content: center;
-  width: 70%;
 }
 
 .Input-pane {
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  width: 30%;
+}
+
+@media (min-width: 768px) {
+  .Parachute-pane {
+    /*min-height: 100vh;*/
+  }
+
+  .Input-pane {
+    min-height: 100vh;
+  }
 }
