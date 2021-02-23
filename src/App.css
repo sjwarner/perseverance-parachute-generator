@@ -6,12 +6,3 @@
 input {
   color: black;
 }
-
-.Parachute-pane {
-  align-items: center;
-}
-
-.Input-pane {
-  align-items: center;
-  justify-content: center;
-}

@@ -70,7 +70,7 @@ const App = () => {
         <h1 className="font-bold text-2xl">🚀 Msg2Mars 🚀</h1>
       </header>
       <div className="App flex flex-1 overflow-y-auto md:flex-row flex-col">
-        <div className="flex flex-col Parachute-pane md:w-3/4 w-full p5 mt-4 mb-4 max-h-full">
+        <div className="flex flex-col items-center md:w-3/4 w-full p5 mt-4 mb-4 max-h-full">
           <PerseveranceParachute
             encodedInnerRing={encodedFirstWord}
             encodedSecondRing={encodedThirdWord}
@@ -78,7 +78,7 @@ const App = () => {
             encodedOuterRing={encodedLocationCoordinates}
           />
         </div>
-        <div className="flex flex-col Input-pane md:w-1/4 w-full px-4">
+        <div className="flex flex-col items-center justify-center md:w-1/4 w-full px-4">
           <InputPane
             firstWord={firstWord}
             setFirstWord={setFirstWord}
