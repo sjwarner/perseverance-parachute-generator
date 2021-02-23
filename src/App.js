@@ -209,7 +209,7 @@ const App = () => {
       </div>
       <footer className="py-5 bg-black text-center text-white flex flex-row justify-between">
         <div>
-          <p className="ml-8">
+          <p className="ml-8 mr-8">
             Inspired by the&nbsp;
             <a
               className="text-blue-300"
