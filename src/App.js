@@ -112,7 +112,7 @@ const App = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <header class="py-5 bg-black text-white text-center">
+      <header className="py-5 bg-black text-white text-center">
         <h1 className="font-bold text-2xl">🚀 Msg2Mars 🚀</h1>
       </header>
       <div className="App flex flex-1 overflow-y-auto md:flex-row flex-col">
