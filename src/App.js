@@ -75,8 +75,8 @@ const EMPTY_ARRAY = [
 
 const App = () => {
   const [firstWord, setFirstWord] = useState("DARE");
-  const [secondWord, setThirdWord] = useState("MIGHTY");
-  const [thirdWord, setSecondWord] = useState("THINGS");
+  const [secondWord, setSecondWord] = useState("MIGHTY");
+  const [thirdWord, setThirdWord] = useState("THINGS");
   const [locationCoordinates, setLocationCoordinates] = useState(
     "34 11 58 N 118 10 31 W"
   );
