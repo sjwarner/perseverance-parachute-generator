@@ -190,13 +190,19 @@ const App = () => {
             >
               Save your parachute
             </button>
-            <span className="mt-4 mb-4">Download your parachute and tweet it out #msg2mars</span>
-            <a className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
-               href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsjwarner.github.io%2Fperseverance-parachute-generator%2F&via=Msg2Mars&text=Make%20your%20own%20Perseverance%20Parachute%20secret%20message%21&hashtags=msg2mars"
-               target="_blank"
-               rel="noopener noreferrer"
+            <span className="mt-4 mb-4">
+              Download your parachute and tweet it out #msg2mars
+            </span>
+            <a
+              className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+              href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsjwarner.github.io%2Fperseverance-parachute-generator%2F&via=Msg2Mars&text=Make%20your%20own%20Perseverance%20Parachute%20secret%20message%21&hashtags=msg2mars"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span><FeatherIcon icon="twitter" className="inline-block mr-4" />Tweet</span>
+              <span>
+                <FeatherIcon icon="twitter" className="inline-block mr-4" />
+                Tweet
+              </span>
             </a>
           </div>
         </div>
