@@ -18,7 +18,7 @@ function encodeTextToPosition(text) {
 }
 
 function encodeCoordinatesToPosition(outerRing) {
-  const coordinates = outerRing.split(" ");
+  const coordinates = outerRing.split(/ |°|'|"/);
 
   const nOrS = [coordinates[3]]
     .map((a) => parseInt(a, 36) - 9)
@@ -42,7 +42,7 @@ function encodeCoordinatesToPosition(outerRing) {
 }
 
 function isCoordinatesValid(outerRing) {
-  const coordinates = outerRing.split(" ");
+  const coordinates = outerRing.split(/ |°|'|"/);
 
   return (
     0 <= coordinates[0] &&
