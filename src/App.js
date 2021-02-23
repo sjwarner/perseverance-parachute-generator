@@ -107,6 +107,7 @@ const App = () => {
         </div>
         <div className="flex flex-row mr-8">
           <a
+            className="m-auto"
             href="https://github.com/sjwarner/perseverance-parachute-generator"
             target="_blank"
             rel="noopener noreferrer"
@@ -118,6 +119,7 @@ const App = () => {
             />
           </a>
           <a
+            className="m-auto"
             href="https://twitter.com/msg2mars"
             target="_blank"
             rel="noopener noreferrer"
