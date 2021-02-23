@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import PerseveranceParachute from "./perseverance-parachute";
 
+const saveSvgAsPng = require('save-svg-as-png');
+
 function encodeTextToPosition(text) {
     const encodedArray = [...text].map(a => parseInt(a, 36) - 9).filter(a => a >= 0);
     const paddingArray = Array(8 - encodedArray.length).fill(0);
@@ -77,10 +79,15 @@ const App = () => {
           encodedThirdRing={encodedThirdRing}
           encodedOuterRing={encodedOuterRing}
         />
-          <p className="mt-4">
+          <p className="mt-4 mb-4">
             Encode your own parachute!
           </p>
-          <p>
+          <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+              onClick={() => saveSvgAsPng.saveSvgAsPng(document.getElementById("parachute"), "parachute.png")}>
+              Save your parachute
+          </button>
+          <p className="mt-4 mb-4">
               Inspired by the&nbsp;
               <a
                   className="text-blue-600"
