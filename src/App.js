@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import FeatherIcon from "feather-icons-react";
 
 import InputPane from "./InputPane";
-import PerseveranceParachute from "./perseverance-parachute";
+import PerseveranceParachute from "./PerseveranceParachute";
 import {
   encodeTextToPosition,
   encodeCoordinatesToPosition,
