@@ -70,6 +70,7 @@ const InputPane = (props) => {
           )
         }
       >
+        <FeatherIcon icon="download" className="inline-block mr-4" />
         Save your parachute
       </button>
       <span className="mt-4 mb-4">
@@ -99,6 +100,7 @@ const InputPane = (props) => {
           );
         }}
       >
+        <FeatherIcon icon="link" className="inline-block mr-4" />
         Copy link to clipboard
       </button>
     </div>
