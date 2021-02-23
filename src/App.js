@@ -12,8 +12,6 @@ import {
 
 import "./App.css";
 
-const saveSvgAsPng = require("save-svg-as-png");
-
 const App = () => {
   const [firstWord, setFirstWord] = useState("DARE");
   const [secondWord, setSecondWord] = useState("MIGHTY");
