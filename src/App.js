@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import FeatherIcon from "feather-icons-react";
+
 import "./App.css";
 import PerseveranceParachute from "./perseverance-parachute";
 
@@ -110,7 +112,9 @@ const App = () => {
 
   return (
     <div className="flex flex-col h-screen">
-      <header class="py-5 bg-black text-white text-center">Some header here</header>
+      <header class="py-5 bg-black text-white text-center">
+        <h1 className="font-bold text-2xl">🚀 Msg2Mars 🚀</h1>
+      </header>
       <div className="App flex flex-1 overflow-y-auto md:flex-row flex-col">
         <div className="flex flex-col Parachute-pane md:w-3/4 w-full p5 mt-4 mb-4 max-h-full">
           <PerseveranceParachute
@@ -119,9 +123,8 @@ const App = () => {
             encodedThirdRing={encodedThirdWord}
             encodedOuterRing={encodedLocationCoordinates}
           />
-          {/*<p className="mt-4 mb-4">Encode your own parachute!</p>*/}
         </div>
-        <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-8 p-4">
+        <div className="flex flex-col Input-pane md:w-1/4 w-full md:mt-0 mt-4 p-4">
           <div className="flex flex-col justify-around">
             <label htmlFor="first-word">First word</label>
             <input
@@ -190,18 +193,36 @@ const App = () => {
           </div>
         </div>
       </div>
-      <footer className="py-5 bg-black text-center text-white">
-        <p className="mt-4 mb-4">
-          Inspired by the&nbsp;
-          <a
+      <footer className="py-5 bg-black text-center text-white flex flex-row justify-between">
+        <div>
+          <p className="ml-8">
+            Inspired by the&nbsp;
+            <a
               className="text-blue-300"
               href="https://twitter.com/steltzner/status/1364076615932645379"
               target="_blank"
               rel="noopener noreferrer"
+            >
+              Perseverance Parachute code crackers
+            </a>
+          </p>
+        </div>
+        <div className="flex flex-row mr-8">
+          <a
+            href="https://github.com/sjwarner/perseverance-parachute-generator"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Perseverance Parachute code crackers
+            <FeatherIcon icon="github" className="mr-4" />
           </a>
-        </p>
+          <a
+            href="https://twitter.com/msg2mars"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FeatherIcon icon="twitter" />
+          </a>
+        </div>
       </footer>
     </div>
   );
