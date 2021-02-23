@@ -101,7 +101,7 @@ const App = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Perseverance Parachute code crackers
+              Perseverance parachute code crackers
             </a>
           </p>
         </div>
