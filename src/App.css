@@ -21,10 +21,8 @@ input {
 
 @media (min-width: 768px) {
   .Parachute-pane {
-    /*min-height: 100vh;*/
   }
 
   .Input-pane {
-    min-height: 100vh;
   }
 }
