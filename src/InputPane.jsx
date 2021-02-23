@@ -73,7 +73,7 @@ const InputPane = (props) => {
         Save your parachute
       </button>
       <span className="mt-4 mb-4">
-        Download your parachute and tweet it out #msg2mars
+        Download your parachute and tweet out your own #msg2mars
       </span>
       <a
         className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded"
