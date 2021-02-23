@@ -125,7 +125,7 @@ const PerseveranceParachute = (props) => {
 
     {/* 2nd Ring */}
     <svg height="500" y="50" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-      <path d="M250.00,0.0000A250,250,0,0,1,268.83,0.71027L266.04,37.605A213,213,0,0,0,250.00,37.000Z" style={{fill:`${secondRing[5].charAt(1) === "1" || secondRing[5] === "00000000" ? '#DF6A33' : '#FFFFFF'}`, stroke:'#000000'}}/>
+      <path d="M250.00,0.0000A250,250,0,0,1,268.83,0.71027L266.04,37.605A213,213,0,0,0,250.00,37.000Z" style={{fill:`${secondRing[5].charAt(7) === "1" || secondRing[5] === "00000000" ? '#DF6A33' : '#FFFFFF'}`, stroke:'#000000'}}/>
 
       <path d="M269.61,0.77067A250,250,0,0,1,288.33,2.9563L282.66,39.519A213,213,0,0,0,266.71,37.657Z" style={{fill:`${ secondRing[5] === "00000000" && secondRing[6] === "00000000" ? '#DF6A33' : '#FFFFFF'}`, stroke:'#000000'}}/>
       <path d="M289.11,3.0779A250,250,0,0,1,307.60,6.7254L299.07,42.730A213,213,0,0,0,283.32,39.622Z" style={{fill:`${ secondRing[5] === "00000000" && secondRing[6] === "00000000" ? '#DF6A33' : '#FFFFFF'}`, stroke:'#000000'}}/>
