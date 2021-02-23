@@ -213,7 +213,7 @@ const App = () => {
             Inspired by the&nbsp;
             <a
               className="text-blue-300"
-              href="https://twitter.com/steltzner/status/1364076615932645379"
+              href="https://github.com/tanyafish/parachute/blob/main/The%20Parachute%20Message.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
