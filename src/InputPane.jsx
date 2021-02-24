@@ -74,12 +74,18 @@ const InputPane = (props) => {
         Save your parachute
       </button>
       <span className="mt-4 mb-4">
-        Download your parachute and tweet out your own #msg2mars, or share your
+        Download your parachute and tweet out your own&nbsp; 
+        <a href="https://twitter.com/search?q=%23msg2mars"
+          className="text-blue-300"
+        >
+          #msg2mars
+        </a>
+        , or share your
         link with friends!
       </span>
       <a
         className="twitter-share-button text-center bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 border border-blue-700 rounded mb-4"
-        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsjwarner.github.io%2Fperseverance-parachute-generator%2F&via=Msg2Mars&text=Make%20your%20own%20Perseverance%20Parachute%20secret%20message%21&hashtags=msg2mars"
+        href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fsjwarner.github.io%2Fperseverance-parachute-generator%2F&via=Msg2Mars&text=Make%20your%20own%20Perseverance%20Parachute%20secret%20message%21&hashtags=msg2mars%2Cmars2021%2CCountdownToMars"
         target="_blank"
         rel="noopener noreferrer"
       >
