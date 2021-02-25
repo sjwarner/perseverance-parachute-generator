@@ -24,7 +24,7 @@ export function encodeCoordinatesToPosition(outerRing) {
     coordinates[1],
     coordinates[2],
     nOrS,
-    coordinates[4],
+    coordinates[4] % 127,
     coordinates[5],
     coordinates[6],
     eOrW,
@@ -38,18 +38,18 @@ export function isCoordinatesValid(outerRing) {
 
   return (
     0 <= coordinates[0] &&
-    coordinates[0] <= 180 &&
+    coordinates[0] <= 90 &&
     0 <= coordinates[1] &&
-    coordinates[1] <= 180 &&
+    coordinates[1] <= 60 &&
     0 <= coordinates[2] &&
-    coordinates[2] <= 180 &&
+    coordinates[2] <= 60 &&
     (coordinates[3] === "N" || coordinates[3] === "S") &&
     0 <= coordinates[4] &&
     coordinates[4] <= 180 &&
     0 <= coordinates[5] &&
-    coordinates[5] <= 180 &&
+    coordinates[5] <= 60 &&
     0 <= coordinates[6] &&
-    coordinates[6] <= 180 &&
+    coordinates[6] <= 60 &&
     (coordinates[7] === "W" || coordinates[7] === "E")
   );
 }

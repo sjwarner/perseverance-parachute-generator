@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import FeatherIcon from "feather-icons-react";
+import Tooltip from "react-simple-tooltip";
 
 import { isCoordinatesValid } from "./utils.js";
 
@@ -38,16 +39,21 @@ const InputPane = (props) => {
         maxLength={8}
         onChange={(e) => props.setThirdWord(e.target.value)}
       />
-      <label htmlFor="location-coordinates">
-        A location -{" "}
-        <a
-          className="text-blue-300"
-          href="https://gisgeography.com/decimal-degrees-dd-minutes-seconds-dms/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          DMS Coordinates
-        </a>
+      <label htmlFor="location-coordinates" className="flex flex-row justify-between mb-1">
+        <div>
+          A location -{" "}
+          <a
+            className="text-blue-300"
+            href="https://gisgeography.com/decimal-degrees-dd-minutes-seconds-dms/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            DMS Coordinates
+          </a>
+        </div>
+        <Tooltip content="Because longitudes can range to 180, values larger than 127 (the largest representable value) will be encoded modulo 128." placement="left">
+          <FeatherIcon icon="info" />
+        </Tooltip>
       </label>
       <input
         className={`bg-white focus:outline-none focus:shadow-outline ${
