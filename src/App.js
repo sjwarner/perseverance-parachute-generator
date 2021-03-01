@@ -5,6 +5,7 @@ import queryString from "query-string";
 import InputPane from "./InputPane";
 import PerseveranceParachute from "./PerseveranceParachute";
 import {
+  removeAccents,
   encodeTextToPosition,
   encodeCoordinatesToPosition,
   isCoordinatesValid,
@@ -43,15 +44,15 @@ const App = () => {
   );
 
   useEffect(() => {
-    setEncodedFirstWord(encodeTextToPosition(firstWord));
+    setEncodedFirstWord(encodeTextToPosition(removeAccents(firstWord)));
   }, [firstWord]);
 
   useEffect(() => {
-    setEncodedSecondWord(encodeTextToPosition(secondWord));
+    setEncodedSecondWord(encodeTextToPosition(removeAccents(secondWord)));
   }, [secondWord]);
 
   useEffect(() => {
-    setEncodedThirdWord(encodeTextToPosition(thirdWord));
+    setEncodedThirdWord(encodeTextToPosition(removeAccents(thirdWord)));
   }, [thirdWord]);
 
   useEffect(() => {

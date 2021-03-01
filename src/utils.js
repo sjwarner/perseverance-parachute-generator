@@ -1,3 +1,7 @@
+export function removeAccents(str) {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 export function encodeTextToPosition(text) {
   const encodedArray = [...text]
     .map((a) => parseInt(a, 36) - 9)
@@ -24,7 +28,7 @@ export function encodeCoordinatesToPosition(outerRing) {
     coordinates[1],
     coordinates[2],
     nOrS,
-    coordinates[4] % 127,
+    coordinates[4] % 128,
     coordinates[5],
     coordinates[6],
     eOrW,
