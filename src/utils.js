@@ -37,6 +37,10 @@ export function encodeCoordinatesToPosition(outerRing) {
   return array.map((num) => (num >>> 0).toString(2).padStart(8, "0"));
 }
 
+export function isWordValid(word) {
+  return /^[A-Za-zÀ-ÖØ-öø-ÿ]*$/.test(word);
+}
+
 export function isCoordinatesValid(outerRing) {
   const coordinates = outerRing.split(/ |°|'|"/);
 

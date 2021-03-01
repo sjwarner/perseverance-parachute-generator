@@ -2,7 +2,7 @@ import React from "react";
 import FeatherIcon from "feather-icons-react";
 import Tooltip from "react-simple-tooltip";
 
-import { isCoordinatesValid } from "./utils.js";
+import { isWordValid, isCoordinatesValid } from "./utils.js";
 
 const saveSvgAsPng = require("save-svg-as-png");
 
@@ -11,7 +11,10 @@ const InputPane = (props) => {
     <div className="flex flex-col justify-around">
       <label htmlFor="first-word">First word</label>
       <input
-        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+        className={`bg-white focus:outline-none focus:shadow-outline rounded py-2 px-4 block w-full appearance-none leading-normal mb-4 ${
+          isWordValid(props.firstWord)
+            ? "border border-gray-300"
+            : "border-red-500 border-2"}`}
         type="text"
         id="first-word"
         value={props.firstWord}
@@ -21,7 +24,10 @@ const InputPane = (props) => {
       />
       <label htmlFor="second-word">Second word</label>
       <input
-        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+        className={`bg-white focus:outline-none focus:shadow-outline rounded py-2 px-4 block w-full appearance-none leading-normal mb-4 ${
+          isWordValid(props.secondWord)
+            ? "border border-gray-300"
+            : "border-red-500 border-2"}`}
         type="text"
         id="second-word"
         value={props.secondWord}
@@ -31,7 +37,10 @@ const InputPane = (props) => {
       />
       <label htmlFor="third-word">Third word</label>
       <input
-        className="bg-white focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none leading-normal mb-4"
+        className={`bg-white focus:outline-none focus:shadow-outline rounded py-2 px-4 block w-full appearance-none leading-normal mb-4 ${
+          isWordValid(props.thirdWord)
+            ? "border border-gray-300"
+            : "border-red-500 border-2"}`}
         type="text"
         id="third-word"
         value={props.thirdWord}
