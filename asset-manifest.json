@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/perseverance-parachute-generator/static/css/main.0893fe70.chunk.css",
-    "main.js": "/perseverance-parachute-generator/static/js/main.1e3ff719.chunk.js",
-    "main.js.map": "/perseverance-parachute-generator/static/js/main.1e3ff719.chunk.js.map",
-    "runtime-main.js": "/perseverance-parachute-generator/static/js/runtime-main.fde5ff41.js",
-    "runtime-main.js.map": "/perseverance-parachute-generator/static/js/runtime-main.fde5ff41.js.map",
-    "static/js/2.1e0d0de3.chunk.js": "/perseverance-parachute-generator/static/js/2.1e0d0de3.chunk.js",
-    "static/js/2.1e0d0de3.chunk.js.map": "/perseverance-parachute-generator/static/js/2.1e0d0de3.chunk.js.map",
-    "static/js/3.580d4143.chunk.js": "/perseverance-parachute-generator/static/js/3.580d4143.chunk.js",
-    "static/js/3.580d4143.chunk.js.map": "/perseverance-parachute-generator/static/js/3.580d4143.chunk.js.map",
-    "index.html": "/perseverance-parachute-generator/index.html",
-    "static/css/main.0893fe70.chunk.css.map": "/perseverance-parachute-generator/static/css/main.0893fe70.chunk.css.map",
-    "static/js/2.1e0d0de3.chunk.js.LICENSE.txt": "/perseverance-parachute-generator/static/js/2.1e0d0de3.chunk.js.LICENSE.txt"
+    "main.css": "/static/css/main.0893fe70.chunk.css",
+    "main.js": "/static/js/main.1e3ff719.chunk.js",
+    "main.js.map": "/static/js/main.1e3ff719.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.7faff99b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.7faff99b.js.map",
+    "static/js/2.1e0d0de3.chunk.js": "/static/js/2.1e0d0de3.chunk.js",
+    "static/js/2.1e0d0de3.chunk.js.map": "/static/js/2.1e0d0de3.chunk.js.map",
+    "static/js/3.580d4143.chunk.js": "/static/js/3.580d4143.chunk.js",
+    "static/js/3.580d4143.chunk.js.map": "/static/js/3.580d4143.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.0893fe70.chunk.css.map": "/static/css/main.0893fe70.chunk.css.map",
+    "static/js/2.1e0d0de3.chunk.js.LICENSE.txt": "/static/js/2.1e0d0de3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fde5ff41.js",
+    "static/js/runtime-main.7faff99b.js",
     "static/js/2.1e0d0de3.chunk.js",
     "static/css/main.0893fe70.chunk.css",
     "static/js/main.1e3ff719.chunk.js"
