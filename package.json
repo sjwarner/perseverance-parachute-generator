@@ -4,6 +4,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@capacitor/android": "3.5.1",
+    "@capacitor/core": "^3.5.1",
     "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -23,6 +25,7 @@
     "deploy": "gh-pages -d build",
     "start": "craco start",
     "build": "craco build",
+    "build:android": "capacitor-resources -p android && npm run build && npx cap sync",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -45,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "@capacitor/cli": "^3.5.1",
     "autoprefixer": "^9.8.6",
     "postcss": "^8.4.14",
     "prettier": "2.2.1"

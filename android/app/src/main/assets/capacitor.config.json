@@ -1,0 +1,8 @@
+{
+	"appId": "me.sjwarner.msg2mars",
+	"appName": "msg2mars",
+	"bundledWebRuntime": false,
+	"npmClient": "npm",
+	"webDir": "build",
+	"cordova": {}
+}

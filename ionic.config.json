@@ -1,0 +1,7 @@
+{
+  "name": "msg2mars",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
