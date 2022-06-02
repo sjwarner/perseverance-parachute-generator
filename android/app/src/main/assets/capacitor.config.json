@@ -4,5 +4,18 @@
 	"bundledWebRuntime": false,
 	"npmClient": "npm",
 	"webDir": "build",
-	"cordova": {}
+	"cordova": {},
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0,
+			"launchAutoHide": true,
+			"androidScaleType": "CENTER_CROP",
+			"androidSplashResourceName": "splash",
+			"splashFullScreen": false,
+			"splashImmersive": false
+		}
+	},
+	"android": {
+		"allowMixedContent": true
+	}
 }
