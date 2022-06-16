@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@capacitor/android": "3.5.1",
+    "@capacitor/clipboard": "^1.0.8",
     "@capacitor/core": "^3.5.1",
     "@craco/craco": "^6.1.1",
     "@testing-library/jest-dom": "^5.11.4",
